@@ -14,7 +14,7 @@ S="${WORKDIR}/${MY_P}"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="~amd64 x86"
+KEYWORDS="amd64 x86"
 IUSE="bin custom-cflags static"
 
 DEPEND="sys-devel/gcc
@@ -56,7 +56,7 @@ src_prepare() {
 src_unpack() {
 	unpack ${A}
         cd "${S}"
-        epatch "${FILESDIR}/${PN}-gentoo.patch"
+        epatch "${FILESDIR}/${MY_P}-gentoo.patch"
 	if use bin; then
 		unpack ../work/"${MY_P}"/xenstore.tar.bz2
 	else
